@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install scrapy SQLAlchemy mysqlclient
 
 RUN mkdir -p /workspace/daum_news_crawler
+WORKDIR /workspace/daum_news_crawler
 RUN git clone -b release --single-branch https://github.com/truelifer/daum_news_crawler.git /workspace/daum_news_crawler
 WORKDIR /workspace/daum_news_crawler/daum_news_crawler
 
