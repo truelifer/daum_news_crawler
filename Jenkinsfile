@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                docker.build("test:0.01"))
+                docker.build("test:0.01")
             }
         }
     }
