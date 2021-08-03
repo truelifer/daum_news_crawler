@@ -1,9 +1,15 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage('Test') {
+        stage('Checkout') {
+            checkout scm
+        }
+
+        stage('Docker Build') {
             steps {
-                docker.build("test:0.01")
+                script {
+                    def customImage = docker.build("test:0.01")
+                }
             }
         }
     }
