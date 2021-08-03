@@ -2,7 +2,9 @@ pipeline {
     agent { dockerfile true }
     stages {
         stage('Checkout') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
 
         stage('Docker Build') {
